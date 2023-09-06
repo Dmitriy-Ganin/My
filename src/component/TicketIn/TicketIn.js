@@ -1,5 +1,4 @@
-import React from 'react';
-import './TicketIn.css';
+import './TicketIn.css'
 
 export const TicketIn = ({ originIn, destinationIn, durationIn, takeOffTimeIn, landingTameIn, stopsIn }) => {
   return (
@@ -23,5 +22,5 @@ export const TicketIn = ({ originIn, destinationIn, durationIn, takeOffTimeIn, l
         <div className="itemValueTicket">{`${stopsIn}`}</div>
       </div>
     </div>
-  );
-};
+  )
+}

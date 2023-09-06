@@ -75,6 +75,8 @@ label {
 
 .checkInput:focus + .checkBox {
   background-color: #f1fcff;
-  box-shadow: 0.5px 0.5px rgba(66, 147, 245, 1), -0.5px -0.5px rgba(66, 147, 245, 1);
+  box-shadow:
+    0.5px 0.5px rgba(66, 147, 245, 1),
+    -0.5px -0.5px rgba(66, 147, 245, 1);
   border-radius: 3px;
 }

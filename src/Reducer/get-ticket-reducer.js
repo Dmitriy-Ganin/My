@@ -8,10 +8,10 @@ import {
   FETCH_TICKETS_SUCCESS,
   FETCH_TICKETS_FAILURE,
   SET_STOP_FETCHING,
-} from '../Action/ticket-actions';
+} from '../Action/ticket-actions'
 // экшн изменения фильтров и сортировки
-import { TOGGLE_FILTER, SET_ALL_FILTERS, CLEAR_ALL_FILTERS } from '../Action/checkbox-actions';
-import { SET_SORTING } from '../Action/sorting-actions';
+import { TOGGLE_FILTER, SET_ALL_FILTERS, CLEAR_ALL_FILTERS } from '../Action/checkbox-actions'
+import { SET_SORTING } from '../Action/sorting-actions'
 
 //3 Action указывает Reduce что изменить в State
 const initialState = {
@@ -29,40 +29,40 @@ const initialState = {
     threeStop: true,
   },
   sorting: 'cheapest',
-};
+}
 
 //2 когда Action указал ЧТО изменить - Reducer решает КАК...это просто логика, отвечающая за обновления, собраная из компонентов в одном месте
 export const ticketReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_SEARCH_ID_REQUEST:
-      return { ...state, loadingSearchId: true, error: null };
+      return { ...state, loadingSearchId: true, error: null }
     case FETCH_SEARCH_ID_SUCCESS:
-      return { ...state, loadingSearchId: false, searchId: action.payload, error: null };
+      return { ...state, loadingSearchId: false, searchId: action.payload, error: null }
     case FETCH_SEARCH_ID_FAILURE:
-      return { ...state, loadingSearchId: false, error: action.payload };
+      return { ...state, loadingSearchId: false, error: action.payload }
     case FETCH_TICKETS_REQUEST:
-      return { ...state, loadingTickets: true, error: null };
+      return { ...state, loadingTickets: true, error: null }
     case FETCH_TICKETS_SUCCESS:
       return {
         ...state,
         loadingTickets: false,
         tickets: [...state.tickets, ...action.payload],
         error: null,
-      };
+      }
     case FETCH_TICKETS_FAILURE:
-      return { ...state, loadingTickets: false, error: action.payload };
+      return { ...state, loadingTickets: false, error: action.payload }
     case SET_STOP_FETCHING:
-      return { ...state, stop: true };
+      return { ...state, stop: true }
     case TOGGLE_FILTER:
       return {
         ...state,
         filters: { ...state.filters, [action.payload]: !state.filters[action.payload] },
-      };
+      }
     case SET_ALL_FILTERS:
       return {
         ...state,
         filters: { ...state.filters, all: true, withoutStop: true, oneStop: true, twoStop: true, threeStop: true },
-      };
+      }
     case CLEAR_ALL_FILTERS:
       return {
         ...state,
@@ -74,10 +74,10 @@ export const ticketReducer = (state = initialState, action) => {
           twoStop: false,
           threeStop: false,
         },
-      };
+      }
     case SET_SORTING:
-      return { ...state, sorting: action.payload };
+      return { ...state, sorting: action.payload }
     default:
-      return state;
+      return state
   }
-};
+}
