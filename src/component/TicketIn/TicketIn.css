@@ -1,0 +1,32 @@
+.ticketIn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 141px;
+  height: 42px;
+}
+
+.item-title {
+  color: #a0b0b9;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.item-value {
+  color: #4a4a4a;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px; /* 150% */
+}

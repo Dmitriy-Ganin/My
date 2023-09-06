@@ -1,0 +1,49 @@
+button {
+  background: white;
+  color: #fff;
+  user-select: none;
+  border: none;
+  outline: none;
+}
+
+.tabsAirLines {
+  display: flex;
+  width: 504px;
+}
+
+.tabsAirLines button:first-child {
+  border-radius: 7px 0 0 7px;
+}
+
+.tabsAirLines button:last-child {
+  border-radius: 0 7px 7px 0;
+}
+
+.itemTabs {
+  width: 168px;
+  height: 50px;
+  color: #4a4a4a;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.itemTabs:hover {
+  cursor: url(../image/Cursor.png), auto;
+}
+
+.itemTabs:active,
+.itemTabs:focus {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  word-wrap: break-word;
+  background: #2196f3;
+}

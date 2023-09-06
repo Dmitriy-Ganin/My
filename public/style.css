@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f7fa;
+}
+.main {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+/*--------------------------------------header*/
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  height: 100px;
+  width: 180px;
+}
+
+/*--------------------------------------sectionFilter*/
+
+.sectionFilter {
+  height: 100%;
+  width: 240px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px 0 20px;
+}
+
+.titleFilter {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #4a4a4a;
+  padding-left: 10px;
+}
+
+.sectionFilterItem {
+  display: flex;
+  height: 40px;
+  width: 280px;
+  margin-left: -20px;
+  padding-top: 7 px;
+  align-items: center;
+}
+
+.sectionFilterItem:hover {
+  background-color: #f1fcff;
+  cursor: url(../src/image/Cursor.png), auto;
+}
+label {
+  cursor: url(../src/image/Cursor.png), auto;
+}
+.sectionFilterItem:last-child {
+  margin-bottom: 12px;
+}
+
+.name {
+  color: #4a4a4a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.check {
+  padding-left: 50px;
+}
+
+.checkInput {
+  appearance: none;
+}
+
+.checkBox {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('../src/image/checkbox/checkboxNo.png') no-repeat;
+  margin-left: -30px;
+}
+
+.checkInput:checked + .checkBox {
+  background: url('../src/image/checkbox/checkboxYes.png') no-repeat;
+}
+
+.checkInput:focus + .checkBox {
+  background-color: #f1fcff;
+  box-shadow:
+    0.5px 0.5px rgba(66, 147, 245, 1),
+    -0.5px -0.5px rgba(66, 147, 245, 1);
+  border-radius: 3px;
+}
+
+/*--------------------------------------sectionAirLines*/
+.sectionAirLines {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 500px;
+}
+/*--------------------------------------Tabs*/
+.tabsAirLines {
+  display: flex;
+  width: 504px;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: #dfe5ec;
+}
+
+.itemTabs {
+  width: 168px;
+  height: 50px;
+  color: #4a4a4a;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.itemTabs:hover {
+  cursor: url(../src/image/Cursor.png), auto;
+  color: #fff;
+}
+
+.active {
+  color: #2196f3;
+}
+
+.itemTabs.active {
+  color: #ffffff;
+}
+/*--------------------------------------cardsTicket*/
+.cards {
+  width: 504px;
+  height: 194px;
+  box-sizing: border-box;
+  padding: 5px 20px 0px 20px;
+  background: #ffffff;
+  box-shadow: (0px 2px 8px rgba(0, 0, 0, 0.1));
+  border-radius: 7px;
+}
+
+.logoAir {
+  width: 155px;
+  height: 55px;
+}
+
+.titleCards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.priceCards {
+  width: 147px;
+  color: var(--primary-colors-primary-500, #2196f3);
+  font-family: Open Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+/*--------------------------------------ticket-back*/
+.ticketBack {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.itemTicket {
+  display: flex;
+  flex-direction: column;
+  width: 141px;
+  height: 42px;
+}
+
+.itemTitleTicket {
+  color: #a0b0b9;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.itemValueTicket {
+  color: #4a4a4a;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px; /* 150% */
+}
+/*--------------------------------------ticket-in*/
+.ticketIn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 141px;
+  height: 42px;
+}
+
+.item-title {
+  color: #a0b0b9;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.item-value {
+  color: #4a4a4a;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px; /* 150% */
+}
+
+/*-----------------------------buttonAdd*/
+.add5Tickets {
+  width: 504px;
+  padding: 15px;
+  color: #4a4a4a;
+}
+
+.add5Tickets:hover {
+  cursor: url(../src/image/Cursor.png), auto;
+  color: #ffffff;
+}

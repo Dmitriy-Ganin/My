@@ -1,0 +1,123 @@
+<header class="header">
+      <img class="logo" src="../src/image/Logo.png" alt="AVIATO" />
+    </header>
+    
+    <main class="main">
+
+      <section class="sectionFilter">
+        <h3 class="titleFilter">КОЛИЧЕСТВО ПЕРЕСАДОК</h3>
+        <div class="sectionFilterItem">
+          <label class="check">
+            <input checked={filters.all} class="checkInput" type="checkbox"  />
+            <span class="checkBox"></span>
+            <span class="name">Все</span>
+          </label>
+        </div>
+        <div class="sectionFilterItem">
+          <label class="check">
+            <input
+              checked={filters.withoutStops}
+              class="checkInput"
+              type="checkbox"
+             
+            />
+            <span class="checkBox"></span>
+            <span class="name">Без пересадок</span>
+          </label>
+        </div>
+        <div class="sectionFilterItem">
+          <label class="check">
+            <input
+              checked={filters.oneStop}
+              class="checkInput"
+              type="checkbox"
+              
+            />
+            <span class="checkBox"></span>
+            <span class="name">1 пересадка</span>
+          </label>
+        </div>
+        <div class="sectionFilterItem">
+          <label class="check">
+            <input
+              checked={filters.twoStops}
+              class="checkInput"
+              type="checkbox"
+              
+            />
+            <span class="checkBox"></span>
+            <span class="name">2 пересадки</span>
+          </label>
+        </div>
+        <div class="sectionFilterItem">
+          <label class="check">
+            <input
+              checked={filters.threeStops}
+              class="checkInput"
+              type="checkbox"
+              
+            />
+            <span class="checkBox"></span>
+            <span class="name">3 пересадки</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="sectionAirLines">
+
+        <div class="tabsAirLines">
+          <button class="itemTabs">
+            Самый дешевый
+          </button>
+          <button class="itemTabs">
+            Самый быстрый
+          </button>
+          <button class="itemTabs">
+            Оптимальный
+          </button>
+        </div>
+
+        <div class="ticketAirLines">
+          <div class="cards">
+            <div class="titleCards">
+              <div class="priceCards">13 400Р</div>
+              <img class="logoAir" src="../src/image/Shuttle-logo.jpg" alt="logo"></img>
+            </div>
+            <div class="ticketBack">
+              <div class="itemTicket">
+                <div class="itemTitleTicket">BRL - SNT</div>
+                <div class="itemValueTicket">14:40 - 12:10</div>
+              </div>
+              <div class="itemTicket">
+                <div class="itemTitleTicket">В пути</div>
+                <div class="itemValueTicket">10ч 00м</div>
+              </div>
+              <div class="itemTicket">
+                <div class="itemTitleTicket">
+                2 пересадки
+                </div>
+                <div class="itemValueTicket">FRN</div>
+              </div>
+              </div>
+            <div class="ticketIn">
+              <div class="itemTicket">
+                <div class="itemTitleTicket">NY - LND</div>
+                <div class="itemValueTicket">10:45 - 08:00</div>
+              </div>
+              <div class="itemTicket">
+                <div class="itemTitleTicket">В пути</div>
+                <div class="itemValueTicket">21ч 15м</div>
+              </div>
+              <div class="itemTicket">
+                <div class="itemTitleTicket">
+                  1 пересадка
+                </div>
+                <div class="itemValueTicket">PRS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="add5Tickets">ПОКАЗАТЬ ЕЩЁ 5 БИЛЕТОВ!</button>
+      </section>
+    </main>

@@ -1,0 +1,44 @@
+.ticketAirLines {
+  width: 504px;
+  height: 194px;
+  box-sizing: border-box;
+  padding: 5px 20px 0px 20px;
+  background: #ffffff;
+  box-shadow: (0px 2px 8px rgba(0, 0, 0, 0.1));
+  border-radius: 7px;
+}
+@keyframes colorball {
+  100% {
+    background-color: #f1fcff;
+  }
+}
+.ticketAirLines:hover {
+  animation: colorball infinite;
+  animation-duration: 2s;
+  transition-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background: #ffffff;
+}
+
+.logoAir {
+  width: 140px;
+  height: 50px;
+}
+
+.titleTicket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.priceTicket {
+  width: 147px;
+  color: var(--primary-colors-primary-500, #2196f3);
+  font-family: Open Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}

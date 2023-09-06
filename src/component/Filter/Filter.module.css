@@ -1,0 +1,76 @@
+.sectionFilter {
+  height: 100%;
+  width: 240px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px 0 20px;
+}
+
+.title-filter {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #4a4a4a;
+  padding-left: 10px;
+}
+
+.sectionFilterItem {
+  display: flex;
+  height: 40px;
+  width: 280px;
+  margin-left: -20px;
+  padding-top: 7 px;
+  align-items: center;
+}
+
+.sectionFilterItem:hover {
+  background-color: #f1fcff;
+  cursor: url(../image/Cursor.png), auto;
+}
+label {
+  cursor: url(../image/Cursor.png), auto;
+}
+.sectionFilterItem:last-child {
+  margin-bottom: 12px;
+}
+
+.name {
+  color: #4a4a4a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.check {
+  padding-left: 50px;
+}
+
+.checkInput {
+  appearance: none;
+}
+
+.checkBox {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('../image/checkbox/checkboxNo.png') no-repeat;
+  margin-left: -30px;
+}
+
+.checkInput:checked + .checkBox {
+  background: url('../image/checkbox/checkboxYes.png') no-repeat;
+}
+
+.checkInput:focus + .checkBox {
+  background-color: #f1fcff;
+  box-shadow:
+    0.5px 0.5px rgba(66, 147, 245, 1),
+    -0.5px -0.5px rgba(66, 147, 245, 1);
+  border-radius: 3px;
+}
