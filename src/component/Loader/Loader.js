@@ -1,4 +1,5 @@
-import './Loader.css'
+import React from 'react';
+import './Loader.css';
 
 export const Loader = () => {
   return (
@@ -9,5 +10,5 @@ export const Loader = () => {
       <div className="loader"></div>
       <div className="loader"></div>
     </div>
-  )
-}
+  );
+};

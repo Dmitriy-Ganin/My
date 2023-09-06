@@ -1,4 +1,5 @@
-import './TicketBack.css'
+import React from 'react';
+import './TicketBack.css';
 export const TicketBack = ({
   originBack,
   destinationBack,
@@ -28,5 +29,5 @@ export const TicketBack = ({
         <div className="itemValueTicket">{`${stopsBack}`}</div>
       </div>
     </div>
-  )
-}
+  );
+};

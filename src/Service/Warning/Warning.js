@@ -1,4 +1,5 @@
-import { Alert, Space } from 'antd'
+import React from 'react';
+import { Alert, Space } from 'antd';
 
 export const Warning = ({ text }) => (
   <Space
@@ -9,4 +10,4 @@ export const Warning = ({ text }) => (
   >
     <Alert message={text} type="info" showIcon />
   </Space>
-)
+);

@@ -1,4 +1,5 @@
-import { Alert, Space } from 'antd'
+import React from 'react';
+import { Alert, Space } from 'antd';
 
 export const Error = ({ text }) => (
   <Space
@@ -9,4 +10,4 @@ export const Error = ({ text }) => (
   >
     <Alert style={{ marginBottom: 20 }} message={text} type="warning" showIcon />
   </Space>
-)
+);

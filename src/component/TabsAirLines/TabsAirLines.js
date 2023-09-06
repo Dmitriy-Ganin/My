@@ -1,21 +1,22 @@
 // по аналогии с Фильтром
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // событие сортировки...экшн
-import { setSorting } from '../../Action/sorting-actions'
+import { setSorting } from '../../Action/sorting-actions';
 
-import classes from './TabsAirLines.module.css'
+import classes from './TabsAirLines.module.css';
 
 export const TabsAirLines = () => {
-  const { tabsAirLines, active, itemTabs } = classes
+  const { tabsAirLines, active, itemTabs } = classes;
 
-  const dispatch = useDispatch()
-  const sorting = useSelector((state) => state.ticketReducer.sorting)
+  const dispatch = useDispatch();
+  const sorting = useSelector((state) => state.ticketReducer.sorting);
 
   // сортировка билетов
   const changeTab = (sorting) => {
-    dispatch(setSorting(sorting))
-  }
+    dispatch(setSorting(sorting));
+  };
 
   // сортировка меняет стили
   return (
@@ -39,5 +40,5 @@ export const TabsAirLines = () => {
         Оптимальный
       </button>
     </div>
-  )
-}
+  );
+};

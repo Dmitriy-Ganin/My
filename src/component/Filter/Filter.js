@@ -1,43 +1,44 @@
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleFilter, setAllFilters, clearAllFilters } from '../../Action/checkbox-actions'
+import { toggleFilter, setAllFilters, clearAllFilters } from '../../Action/checkbox-actions';
 
-import classes from './Filter.module.css'
+import classes from './Filter.module.css';
 
 export const Filter = () => {
-  const { sectionFilter, 'title-filter': titleFilter, sectionFilterItem, check, checkBox, checkInput, name } = classes
+  const { sectionFilter, 'title-filter': titleFilter, sectionFilterItem, check, checkBox, checkInput, name } = classes;
 
   // отправка события(Action) в стор - чтобы указать редусу Что изменить
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   //
-  const filters = useSelector((state) => state.ticketReducer.filters)
+  const filters = useSelector((state) => state.ticketReducer.filters);
 
   // условия срабатывания фильтров
   const onCheked = (filter) => {
     if (filter === 'all') {
       if (!filters.all) {
         // отправка action - изменения состояния
-        dispatch(setAllFilters())
+        dispatch(setAllFilters());
       } else {
-        dispatch(clearAllFilters())
+        dispatch(clearAllFilters());
       }
     } else {
       if (filter === 'withoutStop' && filters.oneStop && filters.twoStop && filters.threeStop) {
-        dispatch(toggleFilter('all'))
+        dispatch(toggleFilter('all'));
       }
       if (filter === 'oneStop' && filters.withoutStop && filters.twoStop && filters.threeStop) {
-        dispatch(toggleFilter('all'))
+        dispatch(toggleFilter('all'));
       }
       if (filter === 'twoStop' && filters.withoutStop && filters.oneStop && filters.threeStop) {
-        dispatch(toggleFilter('all'))
+        dispatch(toggleFilter('all'));
       }
       if (filter === 'threeStop' && filters.withoutStop && filters.oneStop && filters.twoStop) {
-        dispatch(toggleFilter('all'))
+        dispatch(toggleFilter('all'));
       }
 
-      dispatch(toggleFilter(filter))
+      dispatch(toggleFilter(filter));
     }
-  }
+  };
   return (
     <section className={sectionFilter}>
       <h3 className={titleFilter}>КОЛИЧЕСТВО ПЕРЕСАДОК</h3>
@@ -97,5 +98,5 @@ export const Filter = () => {
         </label>
       </div>
     </section>
-  )
-}
+  );
+};

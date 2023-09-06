@@ -1,7 +1,9 @@
-import { TicketIn } from '../TicketIn/TicketIn'
-import { TicketBack } from '../TicketBack/TicketBack'
+import React from 'react';
 
-import classes from './TicketAirLines.module.css'
+import { TicketIn } from '../TicketIn/TicketIn';
+import { TicketBack } from '../TicketBack/TicketBack';
+
+import classes from './TicketAirLines.module.css';
 
 // данные из
 export const TicketAirLines = ({
@@ -20,7 +22,7 @@ export const TicketAirLines = ({
   takeOffTimeBack,
   landingTameBack,
 }) => {
-  const { ticketAirLines, titleTicket, priceTicket, logoAir } = classes
+  const { ticketAirLines, titleTicket, priceTicket, logoAir } = classes;
 
   return (
     <div className={ticketAirLines}>
@@ -45,5 +47,5 @@ export const TicketAirLines = ({
         landingTameBack={landingTameBack}
       />
     </div>
-  )
-}
+  );
+};

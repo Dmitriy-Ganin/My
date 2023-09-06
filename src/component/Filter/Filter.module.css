@@ -7,6 +7,12 @@
   padding: 10px 20px 0 20px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .sectionFilter {
+    width: 462px;
+  }
+}
+
 .title-filter {
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
@@ -69,8 +75,6 @@ label {
 
 .checkInput:focus + .checkBox {
   background-color: #f1fcff;
-  box-shadow:
-    0.5px 0.5px rgba(66, 147, 245, 1),
-    -0.5px -0.5px rgba(66, 147, 245, 1);
+  box-shadow: 0.5px 0.5px rgba(66, 147, 245, 1), -0.5px -0.5px rgba(66, 147, 245, 1);
   border-radius: 3px;
 }
