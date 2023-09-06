@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 //чтобы передавать через контекст...не через пропс
 import { Provider } from 'react-redux'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { combineReducers, applyMiddleware } from 'redux'
 import reduxThunk from 'redux-thunk'
 
 import { ticketReducer } from './Reducer/get-ticket-reducer'
@@ -17,7 +17,7 @@ const loggerMiddleware = (store) => (next) => (action) => {
   return result
 }
 
-export const store = createStore(rootReducer, applyMiddleware(loggerMiddleware, reduxThunk))
+export const store = combineReducers(rootReducer, applyMiddleware(loggerMiddleware, reduxThunk))
 
 const domNode = document.getElementById('root')
 const root = createRoot(domNode)

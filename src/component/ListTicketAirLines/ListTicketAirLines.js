@@ -122,7 +122,7 @@ export const ListTicketAirLines = () => {
   if (error !== null && !stop) {
     return (
       <>
-        {!components.length ? <Warning text={'Please, look for tickets to << Peggie the piper.com >>'} /> : components}
+        {!components.length ? <Warning text={'Nothing found, try to change the search settings'} /> : components}
         {!components.length ? null : <Button onClick={showMoreTickets} />}
       </>
     )
