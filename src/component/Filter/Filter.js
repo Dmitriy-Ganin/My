@@ -1,15 +1,19 @@
+// useD - получает функцию dispatch из стор
+// useS - получает из reducera данные нужного компонента
 import { useDispatch, useSelector } from 'react-redux'
 
+// экшены действий
 import { toggleFilter, setAllFilters, clearAllFilters } from '../../Action/checkbox-actions'
 
 import classes from './Filter.module.css'
 
 export const Filter = () => {
+  // получаю классы стилей по отдельности...это позволяет модуль
   const { sectionFilter, 'title-filter': titleFilter, sectionFilterItem, check, checkBox, checkInput, name } = classes
 
   // отправка события(Action) в стор - чтобы указать редусу Что изменить
   const dispatch = useDispatch()
-  //
+  // получаю из reducera состояния фильтров
   const filters = useSelector((state) => state.ticketReducer.filters)
 
   // условия срабатывания фильтров

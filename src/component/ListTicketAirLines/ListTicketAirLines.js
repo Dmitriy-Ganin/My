@@ -9,7 +9,7 @@ import { Warning } from '../../Service/Warning/Warning'
 
 export const ListTicketAirLines = () => {
   let id = 1
-  //
+  // получение состояний из reduce
   const tickets = useSelector((state) => state.ticketReducer.tickets)
   const error = useSelector((state) => state.ticketReducer.error)
   const filters = useSelector((state) => state.ticketReducer.filters)

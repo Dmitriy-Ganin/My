@@ -1,3 +1,8 @@
+// события сортировка
 export const SET_SORTING = 'SET_SORTING'
 
-export const setSorting = (sorting) => ({ type: SET_SORTING, payload: sorting })
+// данные в переменной sorting, передаются в reducer - а тот отдаст в Store
+export const setSorting = (sorting) => ({
+  type: SET_SORTING,
+  payload: sorting,
+})

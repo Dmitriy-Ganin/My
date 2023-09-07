@@ -76,7 +76,7 @@ export const ticketReducer = (state = initialState, action) => {
         },
       }
     case SET_SORTING:
-      return { ...state, sorting: action.payload }
+      return { ...state, sorting: action.payload } // payload - это переменная, которое содержит внешнее решение...чтобы оставить редуктор чистым
     default:
       return state
   }
