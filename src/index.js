@@ -9,16 +9,21 @@ import reduxThunk from 'redux-thunk'
 // Middleware - функция, обёртка метода отправки экшена dispatch
 // добавляет асинхронный функционал(делать несколько вещей одновременно)...пока не получен запрос - делать элемент неактивным и т.д
 import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { composeWithDevTools } from '@redux-devtools/extension'
 
 // Reducer - логика обновления Стор
-import { ticketReducer } from './Reducer/get-ticket-reducer'
+import { ticketAPIReducer } from './Reducer/ticketAPIReducer'
+import { filterReducer } from './utils/filterReducer'
+import { sortReducer } from './utils/sortReducer'
 import { App } from './component/App/App'
 
 const rootReducer = combineReducers({
-  ticketReducer,
+  ticketAPIReducer,
+  filterReducer,
+  sortReducer,
 })
 
-export const store = createStore(rootReducer, applyMiddleware(reduxThunk))
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(reduxThunk)))
 
 // получаю элемент разметки и гружу приложение в него
 const domNode = document.getElementById('root')

@@ -33,13 +33,12 @@ button {
 }
 
 .itemTabs:hover {
-  cursor: url(../image/Cursor.png), auto;
+  cursor: url(../../assets/Cursor.png), auto;
 }
 
 .itemTabs:active,
 .itemTabs:focus,
-.itemTabs.active 
-{
+.itemTabs.active {
   text-align: center;
   color: white;
   font-weight: 600;

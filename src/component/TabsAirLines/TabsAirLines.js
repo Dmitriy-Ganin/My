@@ -13,7 +13,7 @@ export const TabsAirLines = () => {
 
   const dispatch = useDispatch()
   // получаю из reducera состояния сортировки по Tab
-  const sorting = useSelector((state) => state.ticketReducer.sorting)
+  const sorting = useSelector((state) => state.sortReducer.sorting)
 
   // сортировка билетов
   // setSorting передаст экшн sorting в reducer...а он обновит состояния в стор

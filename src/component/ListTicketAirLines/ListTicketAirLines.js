@@ -8,13 +8,12 @@ import { Loader } from '../Loader/Loader'
 import { Warning } from '../../Service/Warning/Warning'
 
 export const ListTicketAirLines = () => {
-  let id = 1
   // получение состояний из reduce
-  const tickets = useSelector((state) => state.ticketReducer.tickets)
-  const error = useSelector((state) => state.ticketReducer.error)
-  const filters = useSelector((state) => state.ticketReducer.filters)
-  const sorting = useSelector((state) => state.ticketReducer.sorting)
-  const stop = useSelector((state) => state.ticketReducer.stop)
+  const tickets = useSelector((state) => state.ticketAPIReducer.tickets)
+  const error = useSelector((state) => state.ticketAPIReducer.error)
+  const filters = useSelector((state) => state.filterReducer.filters)
+  const sorting = useSelector((state) => state.sortReducer.sorting)
+  const stop = useSelector((state) => state.ticketAPIReducer.stop)
   // показано 5 билетов
   const [ticketsToShow, setTicketsToShow] = useState(5)
 
@@ -46,7 +45,13 @@ export const ListTicketAirLines = () => {
   }
 
   // фильтр билетов...по количеству пересадок--------------------------------------------1 фильтр и сортировка билетов
-  const filterTickets = tickets.filter((elem) => {
+  // добавлю элементам массива id по уникальному сочетанию контенту
+  const newTickets = tickets.map((elem) => ({
+    ...elem,
+    id: `${elem.price}${elem.carrier}${elem.segments[0].date}${elem.segments[1].date}`,
+  }))
+
+  const filterTickets = newTickets.filter((elem) => {
     if (filters.all) {
       return true
     }
@@ -79,7 +84,7 @@ export const ListTicketAirLines = () => {
   const components = visibleTickets.map((item) => {
     // получение свойств из билетов в API
     // цена, код авиакомпании, массив перелётов
-    const { price, carrier, segments } = item
+    const { price, carrier, segments, id } = item
     const {
       origin: originIn,
       destination: destinationIn,
@@ -100,7 +105,7 @@ export const ListTicketAirLines = () => {
       <TicketAirLines
         priceValue={formatPrice(price)}
         codeIATA={carrier}
-        key={id++}
+        key={id}
         originIn={originIn}
         destinationIn={destinationIn}
         durationIn={formatDuration(durationIn)}

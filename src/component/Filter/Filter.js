@@ -14,7 +14,7 @@ export const Filter = () => {
   // отправка события(Action) в стор - чтобы указать редусу Что изменить
   const dispatch = useDispatch()
   // получаю из reducera состояния фильтров
-  const filters = useSelector((state) => state.ticketReducer.filters)
+  const filters = useSelector((state) => state.filterReducer.filters)
 
   // условия срабатывания фильтров
   const onCheked = (filter) => {

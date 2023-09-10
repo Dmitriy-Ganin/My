@@ -36,10 +36,10 @@
 
 .sectionFilterItem:hover {
   background-color: #f1fcff;
-  cursor: url(../image/Cursor.png), auto;
+  cursor: url(../../assets/Cursor.png), auto;
 }
 label {
-  cursor: url(../image/Cursor.png), auto;
+  cursor: url(../../assets/Cursor.png), auto;
 }
 .sectionFilterItem:last-child {
   margin-bottom: 12px;
@@ -65,12 +65,12 @@ label {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: url('../image/checkbox/checkboxNo.png') no-repeat;
+  background: url('../../assets/checkbox/checkboxNo.png') no-repeat;
   margin-left: -30px;
 }
 
 .checkInput:checked + .checkBox {
-  background: url('../image/checkbox/checkboxYes.png') no-repeat;
+  background: url('../../assets/checkbox/checkboxYes.png') no-repeat;
 }
 
 .checkInput:focus + .checkBox {
