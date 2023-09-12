@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { TicketAirLines } from '../TicketAirLines/TicketAirLines'
 import { Button } from '../ButtonAdd/ButtonAdd'
 //сервисные элементы
-import { Loader } from '../Loader/Loader'
+import Loader from '../Loader/Loader'
 import { Warning } from '../../Service/Warning/Warning'
 
 export const ListTicketAirLines = () => {
@@ -26,7 +26,7 @@ export const ListTicketAirLines = () => {
   const formatPrice = (price) => {
     return price.toLocaleString('ru-RU')
   }
-
+  //в фильтр
   const setTakeOffTime = (dateString) => {
     const date = new Date(dateString)
     return date.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })
@@ -43,15 +43,15 @@ export const ListTicketAirLines = () => {
     const landing = new Date(takeOff + minutes * 60000)
     return landing.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })
   }
-
+  //в фильтр
   // фильтр билетов...по количеству пересадок--------------------------------------------1 фильтр и сортировка билетов
   // добавлю элементам массива id по уникальному сочетанию контенту
-  const newTickets = tickets.map((elem) => ({
-    ...elem,
-    id: `${elem.price}${elem.carrier}${elem.segments[0].date}${elem.segments[1].date}`,
-  }))
-
-  const filterTickets = newTickets.filter((elem) => {
+  //const newTickets = tickets.map((elem) => ({
+  // ...elem,
+  // id: `${elem.price}${elem.carrier}${elem.segments[0].date}${elem.segments[1].date}`,
+  //}))
+  //в фильтр
+  const filterTickets = tickets.filter((elem) => {
     if (filters.all) {
       return true
     }
@@ -75,6 +75,7 @@ export const ListTicketAirLines = () => {
       return 0
     }
   })
+  //в фильтр
 
   // -----------------------------------------------------------------------------------1.1 собрать фильтрованное и показать билеты
   // отфильтрованное и сортированное - собрать в массив...первые 5 элементов
@@ -84,7 +85,7 @@ export const ListTicketAirLines = () => {
   const components = visibleTickets.map((item) => {
     // получение свойств из билетов в API
     // цена, код авиакомпании, массив перелётов
-    const { price, carrier, segments, id } = item
+    const { price, carrier, segments } = item
     const {
       origin: originIn,
       destination: destinationIn,
@@ -105,7 +106,7 @@ export const ListTicketAirLines = () => {
       <TicketAirLines
         priceValue={formatPrice(price)}
         codeIATA={carrier}
-        key={id}
+        key={`${item.price}${item.carrier}${item.segments[0].date}${item.segments[1].date}`}
         originIn={originIn}
         destinationIn={destinationIn}
         durationIn={formatDuration(durationIn)}

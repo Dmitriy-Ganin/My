@@ -23,6 +23,8 @@
   "plugins": ["react", "react-hooks", "prettier", "import", "jsx-a11y"],
   "rules": {
     "react/jsx-props-no-spreading": "off",
+    "eslint-disable-next-line": "off",
+    "react-hooks/exhaustive-deps": "off",
     "no-plusplus": "off",
     "import/prefer-default-export": "off",
     "react/destructuring-assignment": "off",

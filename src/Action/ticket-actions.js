@@ -55,11 +55,10 @@ export const fetchTickets = (searchId) => {
             fetchMoreTickets()
           } else dispatch({ type: SET_STOP_FETCHING, payload: data.stop })
         })
-        .catch((error) => {
+        .catch((error) => {     
           dispatch({ type: FETCH_TICKETS_FAILURE, payload: error.message })
         })
     }
-
     fetchMoreTickets()
   }
 }

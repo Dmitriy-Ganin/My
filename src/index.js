@@ -13,8 +13,8 @@ import { composeWithDevTools } from '@redux-devtools/extension'
 
 // Reducer - логика обновления Стор
 import { ticketAPIReducer } from './Reducer/ticketAPIReducer'
-import { filterReducer } from './utils/filterReducer'
-import { sortReducer } from './utils/sortReducer'
+import { filterReducer } from './Reducer/filterReducer'
+import { sortReducer } from './Reducer/sortReducer'
 import { App } from './component/App/App'
 
 const rootReducer = combineReducers({

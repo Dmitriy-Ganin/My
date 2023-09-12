@@ -16,7 +16,8 @@ export const App = () => {
 
   // срабатывает когда меняется []...здесь ничего, срабатывает один раз на старте
   // получаю гостевую сессию и отправляю её в стор
-  useEffect(() => dispatch(getSessionID())), []
+
+  useEffect(() => dispatch(getSessionID()), [])
 
   return (
     <div>
