@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 
+import { sortTickets } from '../../utils/sortTickets'
+import { filterTickets } from '../../utils/filterTickets'
 import { TicketAirLines } from '../TicketAirLines/TicketAirLines'
 import { Button } from '../ButtonAdd/ButtonAdd'
 //сервисные элементы
@@ -43,43 +45,13 @@ export const ListTicketAirLines = () => {
     const landing = new Date(takeOff + minutes * 60000)
     return landing.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })
   }
-  //в фильтр
-  // фильтр билетов...по количеству пересадок--------------------------------------------1 фильтр и сортировка билетов
-  // добавлю элементам массива id по уникальному сочетанию контенту
-  //const newTickets = tickets.map((elem) => ({
-  // ...elem,
-  // id: `${elem.price}${elem.carrier}${elem.segments[0].date}${elem.segments[1].date}`,
-  //}))
-  //в фильтр
-  const filterTickets = tickets.filter((elem) => {
-    if (filters.all) {
-      return true
-    }
-    const stopsCount = elem.segments[0].stops.length
 
-    return (
-      (filters.withoutStop && stopsCount === 0) ||
-      (filters.oneStop && stopsCount === 1) ||
-      (filters.twoStop && stopsCount === 2) ||
-      (filters.threeStop && stopsCount === 3)
-    )
-  })
-
-  // сортировка билетов...дешёвый, быстрый, оптимальный
-  const filterAndSortTickets = filterTickets.sort((a, b) => {
-    if (sorting === 'cheapest') {
-      return a.price - b.price
-    } else if (sorting === 'fastest') {
-      return a.segments[0].duration - b.segments[0].duration
-    } else {
-      return 0
-    }
-  })
-  //в фильтр
-
+  //фильтрация и сортировка ( в utils)
+  const typeTickets = useMemo(() => sortTickets(tickets, sorting), [tickets, sorting])
+  const filteringTickets = useMemo(() => filterTickets(typeTickets, filters), [typeTickets, filters])
   // -----------------------------------------------------------------------------------1.1 собрать фильтрованное и показать билеты
   // отфильтрованное и сортированное - собрать в массив...первые 5 элементов
-  const visibleTickets = filterAndSortTickets.slice(0, ticketsToShow)
+  const visibleTickets = filteringTickets.slice(0, ticketsToShow)
 
   // из этих 5 - получить свойства, пройдя по массиву...как в movieapp
   const components = visibleTickets.map((item) => {
