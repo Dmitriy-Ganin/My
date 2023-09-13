@@ -42,7 +42,6 @@ export const fetchTickets = (searchId) => {
       fetch(`${url}/tickets?searchId=${searchId}`) // запрос на сервер
         .then((response) => {
           if (!response.ok) {
-            fetchMoreTickets()
             throw new Error(response.status)
           }
           return response.json() // если сеть стабильна - пришёл объект с билетами
@@ -56,7 +55,9 @@ export const fetchTickets = (searchId) => {
           } else dispatch({ type: SET_STOP_FETCHING, payload: data.stop })
         })
         .catch((error) => {
-          dispatch({ type: FETCH_TICKETS_FAILURE, payload: error.message })
+          if (error.message >= 500 && error.message < 600) {
+            fetchMoreTickets()
+          } else dispatch({ type: FETCH_TICKETS_FAILURE, payload: error.message })
         })
     }
     fetchMoreTickets()
