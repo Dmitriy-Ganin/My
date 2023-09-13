@@ -49,7 +49,6 @@ export const fetchTickets = (searchId) => {
         .then((data) => {
           const tickets = data.tickets // разложил билеты...распаковал массив
           dispatch({ type: FETCH_TICKETS_SUCCESS, payload: tickets }) // отправил в store...reducer
-
           if (!data.stop) {
             fetchMoreTickets()
           } else dispatch({ type: SET_STOP_FETCHING, payload: data.stop })
